@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Suntik • MinnStore</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- MENU -->
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<div id="sideMenu" class="side-menu">
+  <h3>📌 Tentang Panel</h3>
+  <a href="https://youtube.com/@pembuat" target="_blank">📺 Saluran Pembuat</a>
+  <a href="https://discord.gg/pembuat" target="_blank">💬 Discord Pembuat</a>
+
+  <div class="menu-section">
+    <h4>📝 Deskripsi</h4>
+    <p>Suntik • MinnStore Biru otomatis dengan sistem saldo & order realtime.</p>
+  </div>
+
+  <div class="menu-section">
+    <h4>📜 Rules</h4>
+    <ul>
+      <li>Tidak ada refund</li>
+      <li>Salah link tanggung user</li>
+      <li>Dilarang spam</li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="saldo-box">
+    💰 Saldo: Rp <span id="saldo">0</span>
+  </div>
+
+  <h1>💙 Suntik • MinnStore</h1>
+
+  <!-- ORDER -->
+  <div class="card">
+    <h2>Order Suntik</h2>
+
+    <select id="service">
+      <option value="">Pilih Layanan</option>
+      <option value="tiktok">TikTok</option>
+      <option value="youtube">YouTube</option>
+      <option value="instagram">Instagram</option>
+      <option value="discord">Discord</option>
+    </select>
+
+    <select id="package">
+      <option value="">Pilih Paket</option>
+    </select>
+
+    <input id="link" placeholder="Link / Username">
+    <input id="quantity" type="number" placeholder="Jumlah">
+
+    <div class="total-box">
+      Total Harga: Rp <span id="totalPrice">0</span>
+    </div>
+
+    <button id="orderBtn" disabled onclick="order()">🚀 Order Sekarang</button>
+  </div>
+
+  <!-- DEPOSIT -->
+  <div class="card">
+    <h2>💰 Deposit</h2>
+
+    <input id="depositAmount" type="number" placeholder="Minimal 1.000">
+
+    <div class="payment-buttons">
+      <button onclick="showDana()">DANA</button>
+      <button onclick="showGopay()">GOPAY</button>
+      <button onclick="showQris()">QRIS</button>
+    </div>
+
+    <div id="paymentInfo"></div>
+
+    <input id="proofFile" type="file" accept="image/*">
+
+    <button id="depositBtn" disabled onclick="deposit()">DEPOSIT SEKARANG</button>
+  </div>
+
+  <p class="footer">© 2025 Minnz</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
